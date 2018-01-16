@@ -7,12 +7,14 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import martinto.digital.escuela.notepad.com.recetappsqlite.Adapters.RecetasAdapter;
 import martinto.digital.escuela.notepad.com.recetappsqlite.POJOS.Receta;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewRecetas;
     ArrayList<Receta> recetaArrayList;
+    RecetasAdapter recetasAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerViewRecetas.setLayoutManager(linearLayoutManager);
+        recetasAdapter=new RecetasAdapter(this,recetaArrayList);
+        recyclerViewRecetas.setAdapter(recetasAdapter);
     }
 
     public void createData(){
