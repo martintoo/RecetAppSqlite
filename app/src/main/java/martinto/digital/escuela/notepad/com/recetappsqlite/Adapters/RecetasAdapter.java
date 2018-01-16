@@ -40,6 +40,11 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.nombre.setText(listaRecetas.get(position).getNombre());
+        holder.personas.setText(
+                "Personas: "+String.valueOf(listaRecetas.get(position).getPersonas()));
+        holder.descripcion.setText(listaRecetas.get(position).getDescripcion());
+        holder.preparacion.setText(listaRecetas.get(position).getPreparacion());
 
     }
 
