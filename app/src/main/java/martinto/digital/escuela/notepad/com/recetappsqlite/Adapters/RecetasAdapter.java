@@ -1,5 +1,6 @@
 package martinto.digital.escuela.notepad.com.recetappsqlite.Adapters;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -7,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
+import martinto.digital.escuela.notepad.com.recetappsqlite.POJOS.Receta;
 import martinto.digital.escuela.notepad.com.recetappsqlite.R;
 
 /**
@@ -14,6 +18,13 @@ import martinto.digital.escuela.notepad.com.recetappsqlite.R;
  */
 
 public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHolder> {
+    Context context;
+    List<Receta> listaRecetas;
+
+    public RecetasAdapter(Context context, List<Receta> listaRecetas) {
+        this.context = context;
+        this.listaRecetas = listaRecetas;
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
