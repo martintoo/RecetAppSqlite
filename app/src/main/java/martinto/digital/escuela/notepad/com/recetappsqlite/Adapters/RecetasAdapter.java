@@ -3,6 +3,7 @@ package martinto.digital.escuela.notepad.com.recetappsqlite.Adapters;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -28,7 +29,13 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        /*
+        View view=LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.recetaitem,parent,false);
+        ViewHolder viewHolder=new ViewHolder(view);
+        */
+        return new ViewHolder(LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.recetaitem,parent,false));
     }
 
     @Override
@@ -38,7 +45,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listaRecetas.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
