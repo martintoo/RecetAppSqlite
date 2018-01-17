@@ -1,10 +1,12 @@
 package martinto.digital.escuela.notepad.com.recetappsqlite;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import martinto.digital.escuela.notepad.com.recetappsqlite.Helpers.DBHelper;
+import martinto.digital.escuela.notepad.com.recetappsqlite.POJOS.Receta;
 
 /**
  * Created by Martinto on 17/01/2018.
@@ -28,5 +30,10 @@ public class Data {
     }
     public void close(){
         sqLiteOpenHelper.close();
+    }
+
+    public void insertReceta(Receta receta){
+        ContentValues contentValues=receta.toValues();
+        sqLiteDatabase.insert(SQLConstants.TABLE_RECETAS,null,contentValues);
     }
 }
