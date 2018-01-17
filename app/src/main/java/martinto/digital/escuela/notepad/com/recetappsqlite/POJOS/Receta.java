@@ -1,5 +1,9 @@
 package martinto.digital.escuela.notepad.com.recetappsqlite.POJOS;
 
+import android.content.ContentValues;
+
+import martinto.digital.escuela.notepad.com.recetappsqlite.SQLConstants;
+
 /**
  * Created by martinto on 16/01/18.
  */
@@ -80,5 +84,18 @@ public class Receta {
 
     public void setFav(int fav) {
         this.fav = fav;
+    }
+
+    public ContentValues toValues(){
+        ContentValues contentValues=new ContentValues(7);
+        contentValues.put(SQLConstants.COLUMN_ID,id);
+        contentValues.put(SQLConstants.COLUMN_NOMBRE,nombre);
+        contentValues.put(SQLConstants.COLUMN_PERSONAS,personas);
+        contentValues.put(SQLConstants.COLUMN_DESCRIPCION,descripcion);
+        contentValues.put(SQLConstants.COLUMN_PREPARACION,preparacion);
+        contentValues.put(SQLConstants.COLUMN_IMAGEN,image);
+        contentValues.put(SQLConstants.COLUMN_FAV,fav);
+        return  contentValues;
+
     }
 }
