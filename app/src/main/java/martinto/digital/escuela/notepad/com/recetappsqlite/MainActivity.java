@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerViewRecetas;
     ArrayList<Receta> recetaArrayList;
     RecetasAdapter recetasAdapter;
+    Data data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 "Asi es como se cocina un sandwich","http://imagenes.png",6));
         recetaArrayList.add(new Receta("8","Leche de tigre",7,"Leche de tigre con tomate,jamon,pepino y queso",
                 "Asi es como se cocina un Leche de tigre","http://imagenes.png",0));
-
+        data=new Data(this);
+        data.open();
+        data.insertarRecetas(recetaArrayList);
     }
 }
