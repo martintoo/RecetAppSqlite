@@ -1,9 +1,12 @@
 package martinto.digital.escuela.notepad.com.recetappsqlite;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -16,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Receta> recetaArrayList;
     RecetasAdapter recetasAdapter;
     Data data;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewRecetas.setLayoutManager(linearLayoutManager);
         recetasAdapter=new RecetasAdapter(this,recetaArrayList);
         recyclerViewRecetas.setAdapter(recetasAdapter);
+        floatingActionButton=(FloatingActionButton) findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,AddRecetaActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     public void createData(){
