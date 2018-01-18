@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import martinto.digital.escuela.notepad.com.recetappsqlite.Adapters.RecetasAdapter;
 import martinto.digital.escuela.notepad.com.recetappsqlite.POJOS.Receta;
@@ -31,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerViewRecetas.setLayoutManager(linearLayoutManager);
-        recetasAdapter=new RecetasAdapter(this,recetaArrayList);
-        recyclerViewRecetas.setAdapter(recetasAdapter);
+        //recetasAdapter=new RecetasAdapter(this,recetaArrayList);
+        //recyclerViewRecetas.setAdapter(recetasAdapter);
+        update();
+
         floatingActionButton=(FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,5 +68,21 @@ public class MainActivity extends AppCompatActivity {
         data=new Data(this);
         data.open();
         data.insertarRecetas(recetaArrayList);
+    }
+
+    public List<Receta> getData(){
+        List<Receta> recetas=data.getAll();
+        return recetas;
+    }
+
+    public void update(){
+        recetasAdapter=new RecetasAdapter(this, getData());
+        recyclerViewRecetas.setAdapter(recetasAdapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        update();
     }
 }
