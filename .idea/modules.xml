@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RecetAppSqlite.iml" filepath="$PROJECT_DIR$/RecetAppSqlite.iml" />
-      <module fileurl="file://E:\Github\RecetAppSqlite\RecetappSqlite.iml" filepath="E:\Github\RecetAppSqlite\RecetappSqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\Github\RecetAppSqlite\app\app.iml" filepath="E:\Github\RecetAppSqlite\app\app.iml" />
     </modules>
   </component>
 </project>

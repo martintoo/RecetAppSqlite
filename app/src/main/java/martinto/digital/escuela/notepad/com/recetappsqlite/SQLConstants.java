@@ -31,4 +31,9 @@ public class SQLConstants {
     public static final String SQL_DELETE=
             "DROP TABLE "+ TABLE_RECETAS;
 
+    public static final String[] ALL_COLUMNS={
+                COLUMN_ID,COLUMN_NOMBRE,COLUMN_PERSONAS,COLUMN_DESCRIPCION,COLUMN_PREPARACION,
+                COLUMN_IMAGEN,COLUMN_FAV
+    };
+
 }
