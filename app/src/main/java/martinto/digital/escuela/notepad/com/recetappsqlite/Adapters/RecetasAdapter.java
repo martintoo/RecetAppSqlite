@@ -20,7 +20,7 @@ import martinto.digital.escuela.notepad.com.recetappsqlite.R;
 
 public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHolder> {
     Context context;
-    List<Receta> listaRecetas;
+    public List<Receta> listaRecetas;
 
     public RecetasAdapter(Context context, List<Receta> listaRecetas) {
         this.context = context;
