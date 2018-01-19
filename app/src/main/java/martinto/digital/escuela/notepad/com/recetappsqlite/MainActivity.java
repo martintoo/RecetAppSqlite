@@ -51,8 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 int position=viewHolder.getAdapterPosition();
                 RecetasAdapter recetasAdapter=(RecetasAdapter) recyclerViewRecetas.getAdapter();
                 String value=recetasAdapter.listaRecetas.get(position).getNombre();
+                data.deleteItem(value);
+                update();
             }
         };
+        ItemTouchHelper itemTouchHelper=new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerViewRecetas);
 
         floatingActionButton=(FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {

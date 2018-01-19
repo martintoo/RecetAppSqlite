@@ -78,4 +78,10 @@ public class Data {
         }
         return recetas;
     }
+
+    public void deleteItem(String nombre){
+        String[] whereArgs=new String[]{String.valueOf(nombre)};
+        sqLiteDatabase.delete(SQLConstants.TABLE_RECETAS,SQLConstants.WHERE_CLAUSE_NOMBRE,whereArgs);
+
+    }
 }
