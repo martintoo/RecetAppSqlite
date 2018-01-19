@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                //muchas direction
+                //switch (direction) case 1; case 2
                 int position=viewHolder.getAdapterPosition();
                 RecetasAdapter recetasAdapter=(RecetasAdapter) recyclerViewRecetas.getAdapter();
                 String value=recetasAdapter.listaRecetas.get(position).getNombre();
@@ -57,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         };
         ItemTouchHelper itemTouchHelper=new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyclerViewRecetas);
-
         floatingActionButton=(FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
