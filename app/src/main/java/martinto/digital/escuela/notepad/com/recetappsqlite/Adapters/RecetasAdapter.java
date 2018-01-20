@@ -45,6 +45,11 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
                 "Personas: "+String.valueOf(listaRecetas.get(position).getPersonas()));
         holder.descripcion.setText(listaRecetas.get(position).getDescripcion());
         holder.preparacion.setText(listaRecetas.get(position).getPreparacion());
+        if (listaRecetas.get(position).getFav()>=1){
+            holder.star.setImageResource(R.drawable.ic_star_yellow_24dp);
+        }else {
+            holder.star.setImageResource(R.drawable.ic_star_black_24dp);
+        }
 
     }
 
@@ -55,7 +60,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
-        ImageView imageView;
+        ImageView imageView,star;
         TextView nombre,personas,descripcion,preparacion;
 
         public ViewHolder(View itemView) {
@@ -66,6 +71,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
             personas=(TextView)itemView.findViewById(R.id.personas);
             descripcion=(TextView)itemView.findViewById(R.id.descripcion);
             preparacion=(TextView)itemView.findViewById(R.id.preparacion);
+            star=(ImageView)itemView.findViewById(R.id.star);
         }
     }
 }

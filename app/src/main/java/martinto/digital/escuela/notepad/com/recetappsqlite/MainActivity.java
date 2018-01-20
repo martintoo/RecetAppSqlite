@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         //recetasAdapter=new RecetasAdapter(this,recetaArrayList);
         //recyclerViewRecetas.setAdapter(recetasAdapter);
         update();
-
+        //---------------
+        // Evento pulsar a la derecha
+        //---------------
         ItemTouchHelper.SimpleCallback simpleCallback=
                 //Si quisiera varios pongo un pipe ItemTouchHelper.RIGHT|ItemTouchHelper.LEFT
                 new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
@@ -59,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         };
         ItemTouchHelper itemTouchHelper=new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyclerViewRecetas);
+        //---------------
+        //Fin evento pulsar a la derecha
+        //---------------
+
         floatingActionButton=(FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
