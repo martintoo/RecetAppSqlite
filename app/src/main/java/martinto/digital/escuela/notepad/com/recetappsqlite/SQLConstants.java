@@ -38,4 +38,7 @@ public class SQLConstants {
                 COLUMN_IMAGEN,COLUMN_FAV
     };
 
+    public static final String WHERE_CLAUSES_FAV="fav=?";
+    public static final String WHERE_CLAUSES_PERSONAS="personas=?";
+
 }

@@ -129,10 +129,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.favs:
-                Toast.makeText(this,"Favs",Toast.LENGTH_SHORT).show();
+                recetasAdapter=new RecetasAdapter(this,data.getFavs());
+                recyclerViewRecetas.setAdapter(recetasAdapter);
                 return true;
             case R.id.personaz:
-                Toast.makeText(this,"Personas",Toast.LENGTH_SHORT).show();
+                recetasAdapter=new RecetasAdapter(this,data.getPersonas(2));
+                recyclerViewRecetas.setAdapter(recetasAdapter);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
